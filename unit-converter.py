@@ -4,7 +4,7 @@ import streamlit as st  # Import Streamlit for creating the web-based UI
 
 
 # Function to convert units based on predefined conversion factors or formulas
-def convert_units(value, unit_from, unit_to):
+def units_convert(value, unit_from, unit_to):
     conversions = {
         "meters_kilometers": 0.001,  # 1 meter = 0.001 kilometers
         "kilometers_meters": 1000,  # 1 kilometer = 1000 meters
@@ -39,5 +39,5 @@ unit_to = st.selectbox("Convert to:", ["meters", "kilometers", "grams", "kilogra
 
 # Button to trigger conversion
 if st.button("Convert"):
-    result = convert_units(value, unit_from, unit_to)  # Call the conversion function
+    result = units_convert(value, unit_from, unit_to)  # Call the conversion function
     st.write(f"Converted Value: {result}")  # Display the result
